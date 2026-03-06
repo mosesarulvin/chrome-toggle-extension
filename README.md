@@ -1,21 +1,25 @@
 I created this extension in March 2025.
 
-Dark Mode Toggle (Manifest V3)
+Dark Mode Toggle (Manifest V3) 
+
+https://chromewebstore.google.com/detail/dark-mode-toggle/fnpbhjafilcjcdijkhclfkdnlhjkaeil
 
 A lightweight, high-performance Chrome Extension that enables a "Universal Dark Mode" on any website with a single click. Unlike simple style-injectors, this extension uses CSS Filter Inversion and Storage Persistence to ensure a seamless browsing experience across tabs and sessions.
 
 ✨ Key Features
+
 One-Click Toggle: Instantly switch between light and dark themes via the extension toolbar icon.
 
 Persistent State: Uses chrome.storage.local to remember your preference. If you enable dark mode on one site, it remains active when you restart Chrome or open new tabs.
 
 Real-Time Sync: Utilises chrome.storage.onChanged listeners to update all open tabs simultaneously when the toggle is clicked.
 
-Smart Inversion: Applies a 180deg hue-rotate shift alongside inversion to prevent "neon" color tints, while re-inverting images and videos to keep media looking natural.
+Smart Inversion: Applies a 180deg hue-rotate shift alongside inversion to prevent "neon" colour tints, while re-inverting images and videos to keep media looking natural.
 
-Optimized Performance: Injects styles at document_start to minimize "flash of unlit content" (FOUNC).
+Optimised Performance: Injects styles at document_start to minimise "flash of unlit content" (FOUNC).
 
 🛠️ Technical Architecture
+
 1. manifest.json
 Configured with Manifest V3. It requests activeTab for the current page interaction and storage for state persistence. The content_scripts are set to run on <all_urls> to ensure universal compatibility.
 
@@ -32,24 +36,29 @@ Injects a scoped <style> tag with a specific ID (dark-mode-style) to allow for e
 Monitors storage changes to apply or remove themes without requiring a page reload.
 
 🚀 Installation (Development Mode)
+
 As the project is currently in development, follow these steps to load it locally:
 
 Clone the Repo:
 
 Bash
+
 git clone https://github.com/mosesarulvin/dark-mode-toggle.git
+
 Open Chrome Extensions:
+
 Navigate to chrome://extensions/ in your browser.
 
 Enable Developer Mode:
+
 Toggle the switch in the top-right corner to ON.
 
 Load Unpacked:
+
 Click the Load unpacked button and select the folder containing these files.
 
 📂 File Structure
-Plaintext
-.
+
 ├── manifest.json      # Extension metadata and permissions
 ├── background.js      # Service worker for click events & storage updates
 ├── content.js         # DOM manipulation and CSS injection
