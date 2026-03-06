@@ -58,7 +58,7 @@ Load Unpacked:
 Click the Load unpacked button and select the folder containing these files.
 
 📂 File Structure
-
+.
 ├── manifest.json      # Extension metadata and permissions
 ├── background.js      # Service worker for click events & storage updates
 ├── content.js         # DOM manipulation and CSS injection
